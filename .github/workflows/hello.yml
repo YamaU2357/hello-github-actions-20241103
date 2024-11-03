@@ -13,3 +13,31 @@ jobs:                                  # ジョブの定義
         run: |
           echo "Hello"
           echo "World"
+  context-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show context
+        run: echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+  env-test-job:
+    runs-on: ubuntu-latest
+    env:
+      JOB_ENV: "This is a job environment variable" # Job レベルの環境変数
+    steps:
+      - name: Show environment variables
+        run: |
+          echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+          echo "JOB_ENV: $JOB_ENV"
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }} # Step レベルの環境変数
+  var-test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Variables
+        env: 
+          VAR1 : ${vars.VAR1}}
+          VAR2 : ${vars.VAR2}}
+        run: |
+          echo "${{ env.VAR1 }}"
+          echo "${{ env.VAR2 }}"
