@@ -1,6 +1,5 @@
 name: Hello World                      # ワークフローの名前
-on: push                               # ワークフローのトリガー(今回はpush) 
-                                       # [on, pull_request]のように複数指定も可能
+on: push                               # ワークフローのトリガー(今回はpush)
 
 jobs:                                  # ジョブの定義
   hello-world-job:                     # ジョブの名前
@@ -12,5 +11,5 @@ jobs:                                  # ジョブの定義
         run: echo "Hello World"        # ステップの実行内容(Hello Worldを出力)
       - name: Hello World              # 複数行実行
         run: |
-            echo "Hello"
-            echo "World"
+          echo "Hello"
+          echo "World"
