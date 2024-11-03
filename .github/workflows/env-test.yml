@@ -1,0 +1,15 @@
+name: Env Test
+on: push
+
+jobs:
+  env-test-job:
+    runs-on: ubuntu-latest
+    env:
+      JOB_ENV: "This is a job environment variable" # Job レベルの環境変数
+    steps:
+      - name: Show environment variables
+        run: |
+          echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+          echo "JOB_ENV: $JOB_ENV"
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }} # Step レベルの環境変数
