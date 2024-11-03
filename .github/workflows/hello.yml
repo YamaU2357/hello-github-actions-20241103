@@ -17,7 +17,7 @@ jobs:                                  # ジョブの定義
     runs-on: ubuntu-latest
     steps:
       - name: Show context
-        run: echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+        run: echo "GITHUB_REPOSITORY $GITHUB_REPOSITORY"
         env:
           GITHUB_REPOSITORY: ${{ github.repository }}
   env-test-job:
