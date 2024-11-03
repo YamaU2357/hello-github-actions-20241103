@@ -1,0 +1,14 @@
+name: Variable Test
+on: push
+
+jobs:
+  var-test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Variables
+        env: 
+          VAR1 : ${vars.VAR1}}
+          VAR2 : ${vars.VAR2}}
+        run: |
+          echo "${{ env.VAR1 }}"
+          echo "${{ env.VAR2 }}"
