@@ -1,11 +1,11 @@
-name: Hello World
-on: push
+name: Hello World                      # ワークフローの名前
+on: push                               # ワークフローのトリガー(今回はpush)
 
-jobs:
-  hello-world-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Hello World
-        run: echo "Hello World"
+jobs:                                  # ジョブの定義
+  hello-world-job:                     # ジョブの名前
+    runs-on: ubuntu-latest             # ジョブが実行されるランナーの環境
+    steps:                             # ジョブのステップの定義
+      - name: Checkout repository      # ステップの名前
+        uses: actions/checkout@v4      # GitHub Actionsのアクションを使用
+      - name: Hello World              # ステップの名前
+        run: echo "Hello World"        # ステップの実行内容(Hello Worldを出力)
